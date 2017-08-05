@@ -11,3 +11,14 @@ class CategoryAdmin(admin.ModelAdmin):
     ordering = ('id',)
     search_fields = ('title',)
 
+    class Media:
+        css = {
+            "all": (
+                "css/simplemde.min.css",
+                "css/admin/core/category/simplemde.css",
+            )
+        }
+        js = (
+            "js/simplemde.min.js",
+            'js/admin/core/category/simplemde.js',
+        )
