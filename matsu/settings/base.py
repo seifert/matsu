@@ -76,6 +76,10 @@ TEMPLATES = [
     },
 ]
 
+FIXTURE_DIRS = [
+    os.path.join(PROJECT_DIR, 'fixtures'),
+]
+
 WSGI_APPLICATION = 'matsu.wsgi.application'
 
 

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object model="core.category" pk="1">
+        <field name="title" type="CharField">O nás</field>
+        <field name="tree_path" type="SlugField">o-nas</field>
+        <field name="content" type="TextField">Tradiční karate-do je umění sebeobrany využívající „pouze“ lidského těla a mysli, ale tím
+nejefektivnějším způsobem. Žádné funkční/ultimátní/použitelné bojové umění nemůže být
+založeno pouze na užití svalové síly. Je třeba učit se nejen dokonale ovládat fyzické provedení
+technik, ale také efektivně pracovat s dechem a současně kultivovat vlastní mysl tak, aby
+mohla v každém okamžiku přesně zrcadlit realitu. Je třeba pochopit povahu vlastní mysli.
+Nestačí jen zvládat techniky, je třeba jasná/čistá pozornost – bdělost.
+
+Tradiční karate-do nechce ukázat, kdo je lepší a kdo horší, ale to, že cvičit mohou opravdu
+všichni. Cvičit neznamená pěstovat agresivitu ani vlastní ego, bojové umění je umění zdvořilosti,
+zdvořilosti k sobě samému, ke svým možnostem, k těm i k tomu, co nás obklopuje. Tradiční
+karate-do je metoda dávající nám možnost ovlivnit celý svůj život, vnímat své pokroky skrze
+každodennost, není to forma, kterou si na sebe můžete obléknout a později ji odložit v šatně
+vašeho Dojo.
+
+Tradiční karate-do vyžaduje tvrdý a dlouhý trénink. Neexistují krátké a snadné cesty, k pochopení
+nepotřebujeme slov, pouze vlastní zkušenost. Jen my sami jsme zodpovědni za své činy, za svá
+slova, za svoje myšlenky. Není třeba hledat ani lásku, ani moudrost, ani klid, vlastníme je každý,
+stačí jen upřímnost. Upřímnost ve svém dýchání a ve svém postoji, to stačí. Jen my sami jsme
+zodpovědni za své myšlenky, za svá slova, za svoje činy. Nikdo za nás nemůže dýchat, není nikdo
+ani nad námi, ani pod námi. Neexistuje nikdo a nic hodné uctívání, žádná ideologie, žádná reklama,
+žádné zásluhy.
+
+Existuje jediná cesta – [začít](/jak-zacit/).
+
+Slova nemohou být nikdy dostačující, avšak nezřídka odvádějí z cesty. Proto umlkám. I tebe se to
+týká, cvič a mlč, alespoň dokud nebudeš mít opravdu dobrý důvod k řeči.</field>
+        <field name="css" type="TextField"></field>
+    </object>
+    <object model="core.category" pk="2">
+        <field name="title" type="CharField">Jak začít</field>
+        <field name="tree_path" type="SlugField">jak-zacit</field>
+        <field name="content" type="TextField">„Sen ri no gjó mo sokka ni hadžimaru.“
+
+„Cesta dlouhá tisíce mil musí začít prvním krokem.“</field>
+        <field name="css" type="TextField"></field>
+    </object>
+    <object model="core.category" pk="3">
+        <field name="title" type="CharField">Tradiční karate</field>
+        <field name="tree_path" type="SlugField">tradicni-karate</field>
+        <field name="content" type="TextField">###Dojo kun:
+
+Hitotsu! Jinkaku kansei ni tsutomuru koto!   
+Usiluj o dokonalý charakter.
+
+Hitotsu! Makoto no michi o mamoru koto!   
+Ochraňuj cestu pravdy.
+
+Hitotsu! Doryoku no seichin o yashinau koto!   
+Rozvíjej ducha úsilí.
+
+Hitotsu! Reigi o omonzuru koto!   
+Buď zdvořilý.
+
+Hitotsu! Kekki no yu o imashimuru koto!   
+Vyvaruj se prudkého chování.</field>
+        <field name="css" type="TextField"></field>
+    </object>
+    <object model="core.category" pk="4">
+        <field name="title" type="CharField">Tréninky</field>
+        <field name="tree_path" type="SlugField">treninky</field>
+        <field name="content" type="TextField"></field>
+        <field name="css" type="TextField"></field>
+    </object>
+    <object model="core.category" pk="5">
+        <field name="title" type="CharField">Foto / video</field>
+        <field name="tree_path" type="SlugField">foto</field>
+        <field name="content" type="TextField">Fotky najdete na našem oddílovém [Facebooku](https://www.facebook.com/matsu.cz/photos?ref=page_internal).</field>
+        <field name="css" type="TextField"></field>
+    </object>
+    <object model="core.category" pk="6">
+        <field name="title" type="CharField">Kontakt</field>
+        <field name="tree_path" type="SlugField">kontakt</field>
+        <field name="content" type="TextField">info(zavináč)matsu.cz
+
+Lukáš: +420 601-KARATE   
+(t. j. +420 601 527 283)   
+lukas(zavináč)matsu.cz
+
+Dana: +420 777-KARATE   
+(t. j. +420 777 527 283)   
+dana(zavináč)matsu.cz</field>
+        <field name="css" type="TextField"></field>
+    </object>
+</django-objects>

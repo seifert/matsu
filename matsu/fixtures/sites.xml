@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object model="sites.site" pk="1">
+        <field name="domain" type="CharField">www.matsu.cz</field>
+        <field name="name" type="CharField">www.matsu.cz</field>
+    </object>
+</django-objects>
