@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 {% load static %}
+{% load category %}
 
 <html lang="cs">
 <head>
@@ -16,15 +17,15 @@
         <div id="content-wrapper">
             <div id="header">
             {% block header %}
-                {% block h1 %}<h1 id="h1">{% block h1-text %}Karate Klub Matsu{% endblock %}</h1>{% endblock %}
+                {% block h1 %}<h1 id="h1">{% block h1-text %}Karate Klub Matsu<span class="lowercase"> – {{ category.title }}</span>{% endblock %}</h1>{% endblock %}
                 <div id="menu">
                     <ul>
-                        <li class="selected"><a href="{% url 'homepage' %}">o nás</a></li>
-                        <li><a href="{% url 'homepage' %}">jak začít</a></li>
-                        <li><a href="{% url 'homepage' %}">tradiční karate</a></li>
-                        <li><a href="{% url 'homepage' %}">tréninky</a></li>
-                        <li><a href="{% url 'homepage' %}">foto / video</a></li>
-                        <li class="last"><a href="{% url 'homepage' %}">kontakt</a></li>
+                        {% category_item 'o-nas' current_category=category %}
+                        {% category_item 'jak-zacit' current_category=category %}
+                        {% category_item 'tradicni-karate' current_category=category %}
+                        {% category_item 'treninky' current_category=category %}
+                        {% category_item 'foto' current_category=category %}
+                        {% category_item 'kontakt' current_category=category %}
                     </ul>
                     <hr class="cleaner">
                 </div>

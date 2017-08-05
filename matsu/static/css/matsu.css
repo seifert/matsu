@@ -8,6 +8,10 @@ a {
     color: #f15a26;
 }
 
+h1 .lowercase {
+    text-transform: lowercase;
+}
+
 #wrapper {
     width: 1200px;
     margin: 0px auto;
@@ -42,9 +46,10 @@ a {
     padding: 10px;
     color: white;
     background-color: #6d6f71;
+    text-transform: lowercase;
 }
 
-#menu .last {
+#menu li:last-child {
     margin-right: 0px;
 }
 

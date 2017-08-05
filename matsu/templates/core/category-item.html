@@ -1,0 +1,5 @@
+{% spaceless %}
+<li{% if current_category and category.tree_path == current_category.tree_path %} class="selected"{% endif %}>
+    <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+</li>
+{% endspaceless %}

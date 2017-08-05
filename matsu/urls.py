@@ -23,7 +23,7 @@ from matsu.core import views as core_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^$', core_views.homepage, name='homepage'),
+    url(r'^(?P<path>[a-z0-9/-]+)/$', core_views.category, name='category'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
