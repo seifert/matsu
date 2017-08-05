@@ -39,12 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    'django.contrib.redirects',
     'django.contrib.staticfiles',
 
     'matsu.core',
 ]
 
 MIDDLEWARE = [
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
