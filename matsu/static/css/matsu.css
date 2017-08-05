@@ -1,0 +1,213 @@
+
+body {
+    color: #6d6f71;
+    font-family: "Arial CE", sans-serif;
+}
+
+a {
+    color: #f15a26;
+}
+
+#wrapper {
+    width: 1200px;
+    margin: 0px auto;
+}
+
+#content-wrapper {
+    width: 980px;
+    float: right;
+}
+
+#header {
+    width: 980px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+#menu {
+    text-align: center;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#menu li {
+    width: 135px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+    color: white;
+    background-color: #6d6f71;
+}
+
+#menu .last {
+    margin-right: 0px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: white;
+}
+
+#menu li:hover {
+    text-decoration: underline;
+}
+
+#menu .selected {
+    background-color: #f15a26;
+}
+
+hr.cleaner {
+	clear: both;
+	margin: -1px 0 0 0;
+	padding: 0;
+	height: 1px;
+	border: none;
+	visibility: hidden;
+}
+
+#content {
+    width: 980px;
+}
+
+#content p {
+	margin-top: 0px;
+}
+
+#sidebar {
+    width: 200px;
+    height: 410px;
+    margin-right: 0px;
+    float: left;
+    background-image: url("/static/img/matsu.png");
+}
+
+#content-homepage {
+    padding-right: 250px;
+    padding-left: 0px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+    -webkit-column-rule: 1px solid #6d6f71;;
+    -moz-column-rule: 1px solid #6d6f71;;
+    column-rule: 1px solid #6d6f71;;
+    background-image: url("/static/img/panacek.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+@media screen and (max-width: 1024px) {
+    #wrapper {
+        width: 980px;
+    }
+
+    #content-wrapper {
+        float: none;
+    }
+
+    #sidebar {
+        width: 0px;
+        float: none;
+        display: none;
+    }
+
+#content-homepage {
+    padding-left: 220px;
+    padding-right: 0px;
+    background-image: url("/static/img/matsu.png");
+    background-position: top left;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #content-wrapper {
+        width: 100%;
+        float: none;
+    }
+
+    #header {
+        width: 100%;
+        min-height: 410px;
+        margin-bottom: 0px;
+        background-image: url("/static/img/matsu.png");
+        background-position: right top;
+        background-repeat: no-repeat;
+    }
+
+    #menu li {
+        width: 50%;
+        float: left;
+        padding: 10px 0px 10px 0px;
+        margin: 0px 50% 20px 0px;
+    }
+
+    #wrapper {
+        width: 100%;
+    }
+
+    #content {
+        width: 100%;
+    }
+
+    #sidebar {
+        width: 0px;
+        float: none;
+        display: none;
+    }
+
+    #content-homepage {
+        padding-right: 0px;
+        padding-left: 0px;
+        -webkit-column-count: auto;
+        -moz-column-count: auto;
+        column-count: auto;
+        background-image: none;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    #wrapper {
+        width: 100%;
+    }
+
+    #content-wrapper {
+        width: 100%;
+        float: none;
+    }
+
+    #header {
+        width: 100%;
+        background-image: none;
+    }
+
+    #menu li {
+        width: 100%;
+        float: none;
+        padding: 10px 0px 10px 0px;
+        margin: 0px 0px 20px 0px;
+    }
+
+    #content {
+        width: 100%;
+    }
+
+    #sidebar {
+        width: 0px;
+        float: none;
+        display: none;
+    }
+
+    #content-homepage {
+        -webkit-column-count: auto;
+        -moz-column-count: auto;
+        column-count: auto;
+        background-image: none;
+    }
+}

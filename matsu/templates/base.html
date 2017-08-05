@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="cs">
+<head>
+    {% block html-head %}
+    <title>{% block html-head-title %}Karate Klub Matsu{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/matsu.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    {% block html-head-extrastatics %}{% endblock %}
+    {% endblock %}
+</head>
+<body>
+    <div id="wrapper">
+        <div id="content-wrapper">
+            <div id="header">
+            {% block header %}
+                {% block h1 %}<h1 id="h1">{% block h1-text %}Karate Klub Matsu{% endblock %}</h1>{% endblock %}
+                <div id="menu">
+                    <ul>
+                        <li class="selected"><a href="{% url 'homepage' %}">o nás</a></li>
+                        <li><a href="{% url 'homepage' %}">jak začít</a></li>
+                        <li><a href="{% url 'homepage' %}">tradiční karate</a></li>
+                        <li><a href="{% url 'homepage' %}">tréninky</a></li>
+                        <li><a href="{% url 'homepage' %}">foto / video</a></li>
+                        <li class="last"><a href="{% url 'homepage' %}">kontakt</a></li>
+                    </ul>
+                    <hr class="cleaner">
+                </div>
+            {% endblock %}
+            </div>
+            <div id="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+        <div id="sidebar">
+            {% block sidebar %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
