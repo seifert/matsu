@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'matsu.core',
+    'matsu.scheduler',
 ]
 
 MIDDLEWARE = [
