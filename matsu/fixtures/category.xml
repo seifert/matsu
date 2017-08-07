@@ -29,7 +29,6 @@ Existuje jediná cesta – [začít](/jak-zacit/).
 
 Slova nemohou být nikdy dostačující, avšak nezřídka odvádějí z cesty. Proto umlkám. I tebe se to
 týká, cvič a mlč, alespoň dokud nebudeš mít opravdu dobrý důvod k řeči.</field>
-        <field name="css" type="TextField"></field>
     </object>
     <object model="core.category" pk="2">
         <field name="title" type="CharField">Jak začít</field>
@@ -37,7 +36,6 @@ týká, cvič a mlč, alespoň dokud nebudeš mít opravdu dobrý důvod k řeč
         <field name="content" type="TextField">„Sen ri no gjó mo sokka ni hadžimaru.“
 
 „Cesta dlouhá tisíce mil musí začít prvním krokem.“</field>
-        <field name="css" type="TextField"></field>
     </object>
     <object model="core.category" pk="3">
         <field name="title" type="CharField">Tradiční karate</field>
@@ -58,19 +56,16 @@ Buď zdvořilý.
 
 Hitotsu! Kekki no yu o imashimuru koto!   
 Vyvaruj se prudkého chování.</field>
-        <field name="css" type="TextField"></field>
     </object>
     <object model="core.category" pk="4">
         <field name="title" type="CharField">Tréninky</field>
         <field name="tree_path" type="SlugField">treninky</field>
         <field name="content" type="TextField"></field>
-        <field name="css" type="TextField"></field>
     </object>
     <object model="core.category" pk="5">
         <field name="title" type="CharField">Foto / video</field>
         <field name="tree_path" type="SlugField">foto</field>
         <field name="content" type="TextField">Fotky najdete na našem oddílovém [Facebooku](https://www.facebook.com/matsu.cz/photos?ref=page_internal).</field>
-        <field name="css" type="TextField"></field>
     </object>
     <object model="core.category" pk="6">
         <field name="title" type="CharField">Kontakt</field>
@@ -84,6 +79,5 @@ lukas(zavináč)matsu.cz
 Dana: +420 777-KARATE   
 (t. j. +420 777 527 283)   
 dana(zavináč)matsu.cz</field>
-        <field name="css" type="TextField"></field>
     </object>
 </django-objects>
