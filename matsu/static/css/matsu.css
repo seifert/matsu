@@ -8,6 +8,10 @@ a {
     color: #f15a26;
 }
 
+h1 {
+    color: #6d6f71;
+}
+
 h1 .lowercase {
     text-transform: lowercase;
 }
