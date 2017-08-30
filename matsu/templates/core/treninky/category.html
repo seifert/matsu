@@ -1,0 +1,141 @@
+{% extends "core/category.html" %}
+{% load scheduler %}
+
+{% block html-head-extrastatics %}
+<style>
+
+#content-scheduler-month {
+    width: 100%;
+    margin-bottom: 2em;
+    border: solid 1px #6d6f71;
+    overflow: hidden;
+}
+
+#content-scheduler h2 {
+    text-align: center;
+    padding: 0.25em 0px 0.25em 0px;
+    margin: 0px;
+    color: white;
+    background-color: #6d6f71;
+}
+
+#content-scheduler ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+#content-scheduler li {
+    padding: 0px;
+    margin: 0px;
+}
+
+#content-scheduler-month .cell {
+    width: calc((100% / 7) - 12px);
+    height: calc(5em + 12px);
+    padding: 5px;
+    margin: 1px;
+    float: left;
+    background-color: WhiteSmoke;
+    overflow: hidden;
+}
+
+#content-scheduler-month a {
+    color: #6d6f71;
+    text-decoration: none;
+}
+
+#content-scheduler-month a:hover {
+    color: white;
+}
+
+#content-scheduler-month .cell:hover {
+    color: white;
+    background-color: #6d6f71;
+}
+
+#content-scheduler-month .cell-header {
+    height: 1.25em;
+}
+
+#content-scheduler-month .cell-header-count {
+    display: block;
+    float: left;
+    margin-top: 0.18em;
+    font-size: 0.76em;
+}
+
+#content-scheduler-month .cell-header-day {
+    display: block;
+    height: 100%;
+    float: right;
+    font-weight: bold;
+}
+
+#content-scheduler-month .cell-sunday {
+    color: red;
+}
+
+#content-scheduler-month .cell-current {
+    background-color: NavajoWhite;
+}
+
+#content-scheduler-month .cell-different-month {
+    display: none;
+}
+
+#content-scheduler-month .cell-events {
+    height: 4em;
+    padding-top: 1em;
+    overflow: hidden;
+    line-height: 1.25;
+    clear: both;
+}
+
+#content-scheduler-month .cell-events li {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+    <div id="content-scheduler">
+        <div>{{ block.super }}</div>
+        <div>
+            {% get_scheduler_events 2 as events %}
+            {% now "Y-m-d" as today_str %}
+            {% for month in events %}
+            <div id="content-scheduler-month">
+                <h2>{{ month.0|date:"F Y" }}</h2>
+                <ul>
+                {% for day in month.1 %}
+                    <li class="cell{% if day.0|date:"Y-m-d" == today_str and day.0.month == month.0.month %} cell-current{% endif %}">
+                        {% if day.0.month == month.0.month %}
+                            <a href="{{ category.get_absolute_url }}{{ day.0|date:"Y-m-d" }}/">
+                            <div class="cell-header">
+                                <span class="cell-header-day{% if forloop.counter|divisibleby:"7" %} cell-sunday{% endif %}">{{ day.0|date:"D j" }}</span>
+                                <span class="cell-header-count">({{ day.1|length }} událostí)</span>
+                            </div>
+                            {% if day.1 %}
+                            <ul class="cell-events">
+                            {% for event in day.1 %}
+                                <li>{{ event }}</li>
+                            {% endfor %}
+                            </ul>
+                            {% endif %}
+                            </a>
+                        {% else %}
+                            <span class="cell-different-month">{{ day.0|date:"D j.n." }} nepatří do tohoto měsíce</span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
