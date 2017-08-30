@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object model="scheduler.category" pk="1">
+        <field name="title" type="CharField">Cvičení</field>
+    </object>
+    <object model="scheduler.category" pk="2">
+        <field name="title" type="CharField">Soustředění</field>
+    </object>
+    <object model="scheduler.category" pk="3">
+        <field name="title" type="CharField">Hospoda</field>
+    </object>
+    <object model="scheduler.event" pk="1">
+        <field name="title" type="CharField">Cvičení děti</field>
+        <field name="description" type="TextField"></field>
+        <field name="category" rel="ManyToOneRel" to="scheduler.category">1</field>
+        <field name="valid_from" type="DateField">2017-01-03</field>
+        <field name="start" type="TimeField">18:00:00</field>
+        <field name="stop" type="TimeField">19:00:00</field>
+        <field name="repeat" type="IntegerField">3</field>
+        <field name="valid_until" type="DateField">2017-12-31</field>
+    </object>
+    <object model="scheduler.event" pk="2">
+        <field name="title" type="CharField">Cvičení dospělí</field>
+        <field name="description" type="TextField"></field>
+        <field name="category" rel="ManyToOneRel" to="scheduler.category">1</field>
+        <field name="valid_from" type="DateField">2017-01-05</field>
+        <field name="start" type="TimeField">18:00:00</field>
+        <field name="stop" type="TimeField">19:00:00</field>
+        <field name="repeat" type="IntegerField">3</field>
+        <field name="valid_until" type="DateField">2017-12-31</field>
+    </object>
+    <object model="scheduler.cancelledevent" pk="1">
+        <field name="valid_from" type="DateField">2017-08-07</field>
+        <field name="valid_until" type="DateField">2017-08-13</field>
+        <field name="description" type="TextField">Dovolená</field>
+        <field name="events" rel="ManyToManyRel" to="scheduler.event"><object pk="1"></object><object pk="2"></object></field>
+    </object>
+</django-objects>
