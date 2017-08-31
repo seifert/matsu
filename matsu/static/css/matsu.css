@@ -43,11 +43,10 @@ h1 .lowercase {
 }
 
 #menu li {
-    width: 135px;
+    width: 155px;
     float: left;
     margin-right: 10px;
     margin-bottom: 5px;
-    padding: 10px;
     color: white;
     background-color: #6d6f71;
     text-transform: lowercase;
@@ -58,6 +57,9 @@ h1 .lowercase {
 }
 
 #menu a {
+    display: block;
+    width: 135px;
+    padding: 10px;
     text-decoration: none;
     color: white;
 }
@@ -152,9 +154,11 @@ hr.cleaner {
 
     #menu li {
         width: 50%;
-        float: left;
-        padding: 10px 0px 10px 0px;
         margin: 0px 50% 20px 0px;
+    }
+
+    #menu a {
+        width: calc(100% - 20px);
     }
 
     #wrapper {
@@ -199,7 +203,6 @@ hr.cleaner {
     #menu li {
         width: 100%;
         float: none;
-        padding: 10px 0px 10px 0px;
         margin: 0px 0px 20px 0px;
     }
 
