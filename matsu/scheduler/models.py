@@ -18,13 +18,20 @@ class Category(models.Model):
 
 class Event(models.Model):
 
+    DO_NOT_REPEAT = 1
+    DAILY = 2
+    WEEKLY = 3
+    BI_WEEKLY = 4
+    MONTHLY = 5
+    YEARLY = 6
+
     REPEAT_CHOICES = (
-        (1, _("Do not repeat")),
-        (2, _("Daily")),
-        (3, _("Weekly")),
-        (4, _("Bi-weekly")),
-        (5, _("Monthly")),
-        (6, _("Yearly")),
+        (DO_NOT_REPEAT, _("Do not repeat")),
+        (DAILY, _("Daily")),
+        (WEEKLY, _("Weekly")),
+        (BI_WEEKLY, _("Bi-weekly")),
+        (MONTHLY, _("Monthly")),
+        (YEARLY, _("Yearly")),
     )
 
     title = models.CharField(_("Title"), max_length=100)
@@ -33,11 +40,10 @@ class Event(models.Model):
         Category, verbose_name=_("Category"), blank=True, null=True)
     valid_from = models.DateField(_("Valid from"), db_index=True)
     start = models.TimeField(_("Start"))
-    stop = models.TimeField(_("Stop"), blank=True, null=True)
+    valid_until = models.DateField(_("Valid until"), db_index=True)
+    stop = models.TimeField(_("Stop"))
     repeat = models.IntegerField(
-        _("Repeat"), choices=REPEAT_CHOICES, blank=True, null=True)
-    valid_until = models.DateField(
-        _("Valid until"), blank=True, null=True, db_index=True)
+        _("Repeat"), choices=REPEAT_CHOICES, default=1)
 
     class Meta:
         verbose_name = _("event")
@@ -47,7 +53,8 @@ class Event(models.Model):
         return self.title
 
     def short_description(self):
-        return Truncator(self.description).words(50, truncate=' ...')
+        return Truncator(self.description).words(50, truncate=' …')
+
 
 
 class CancelledEvent(models.Model):

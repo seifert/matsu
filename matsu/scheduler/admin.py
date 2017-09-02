@@ -16,8 +16,8 @@ class CategoryAdmin(admin.ModelAdmin):
 class EventAdmin(admin.ModelAdmin):
 
     list_display = (
-        'title', 'category', 'valid_from', 'start', 'stop',
-        'repeat', 'valid_until')
+        'title', 'category', 'valid_from', 'start',
+        'valid_until', 'stop', 'repeat')
     ordering = ('-valid_from', '-start')
     search_fields = ('title',)
 
