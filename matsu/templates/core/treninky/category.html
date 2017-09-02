@@ -91,10 +91,10 @@
 }
 
 #content-scheduler-month .cell-events {
-    height: 4em;
+    height: 5em;
     padding-top: 1em;
     overflow: hidden;
-    line-height: 1.25;
+    font-size: 75%;
     clear: both;
 }
 
@@ -105,37 +105,49 @@
     text-overflow: ellipsis;
 }
 
+#content-scheduler-month .cell-events-cancelled {
+    text-decoration: line-through;
+}
+
 </style>
 {% endblock %}
 
 {% block content %}
     <div id="content-scheduler">
-        {% get_scheduler_events 2 as events %}
+        {% get_scheduler_events 2 as calendar %}
         {% now "Y-m-d" as today_str %}
-        {% for month in events %}
+        {% for month in calendar %}
         <div id="content-scheduler-month">
-            <h2>{{ month.0|date:"F Y" }}</h2>
+            <h2>{{ month.first_day|date:"F Y" }}</h2>
             <ul>
-            {% for day in month.1 %}
-                {% if day.0.month == month.0.month %}
-                    <li class="cell{% if day.0|date:"Y-m-d" == today_str and day.0.month == month.0.month %} cell-current{% endif %}">
-                        <a href="{{ category.get_absolute_url }}{{ day.0|date:"Y-m-d" }}/">
-                        <div class="cell-header">
-                            <span class="cell-header-day{% if forloop.counter|divisibleby:"7" %} cell-sunday{% endif %}">{{ day.0|date:"D j" }}</span>
-                            <span class="cell-header-count">({{ day.1|length }} událostí)</span>
-                        </div>
-                        {% if day.1 %}
-                        <ul class="cell-events">
-                        {% for event in day.1 %}
-                            <li>{{ event }}</li>
-                        {% endfor %}
-                        </ul>
-                        {% endif %}
+            {% for day in month.days %}
+                {% if day.date.month == month.first_day.month %}
+                    <li class="cell{% if day.date|date:"Y-m-d" == today_str and day.date.month == month.first_day.month %} cell-current{% endif %}">
+                        <a href="{{ category.get_absolute_url }}{{ day.date|date:"Y-m-d" }}/">
+                            <div class="cell-header">
+                                <span class="cell-header-day{% if forloop.counter|divisibleby:"7" %} cell-sunday{% endif %}">{{ day.date|date:"D j" }}</span>
+                                <span class="cell-header-count">
+                                    {% with events_count=day.events|length %}
+                                        ({{ events_count }}
+                                        {% if events_count == 0 or events_count >= 5 %}událostí{% endif %}
+                                        {% if events_count == 1 %}událost{% endif %}
+                                        {% if events_count >= 2 and events_count <= 4 %}události{% endif %}
+                                        )
+                                    {% endwith %}
+                                </span>
+                            </div>
+                            <ul class="cell-events">
+                            {% for event in day.events %}
+                                <li {% if event|is_cancelled_for_day:day.date %}class="cell-events-cancelled"{% endif %}>
+                                    {{ event.title }}
+                                </li>
+                            {% endfor %}
+                            </ul>
                         </a>
                     </li>
                 {% else %}
                     <li class="cell cell-different-month">
-                        {{ day.0|date:"D j.n." }} nepatří do tohoto měsíce
+                        {{ day.date|date:"D j.n." }} nepatří do tohoto měsíce
                     </li>
                 {% endif %}
             {% endfor %}

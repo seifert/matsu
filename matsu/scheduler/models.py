@@ -55,6 +55,11 @@ class Event(models.Model):
     def short_description(self):
         return Truncator(self.description).words(50, truncate=' …')
 
+    def is_cancelled_for_day(self, day):
+        for cancelled in self.cancelled.all():
+            if day >= cancelled.valid_from and day <= cancelled.valid_until:
+                return True
+        return False
 
 
 class CancelledEvent(models.Model):
