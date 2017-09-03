@@ -15,9 +15,9 @@
         <field name="category" rel="ManyToOneRel" to="scheduler.category">1</field>
         <field name="valid_from" type="DateField">2017-01-03</field>
         <field name="start" type="TimeField">18:00:00</field>
+        <field name="valid_until" type="DateField">2017-12-31</field>
         <field name="stop" type="TimeField">19:00:00</field>
         <field name="repeat" type="IntegerField">3</field>
-        <field name="valid_until" type="DateField">2017-12-31</field>
     </object>
     <object model="scheduler.event" pk="2">
         <field name="title" type="CharField">Cvičení dospělí</field>
@@ -25,14 +25,64 @@
         <field name="category" rel="ManyToOneRel" to="scheduler.category">1</field>
         <field name="valid_from" type="DateField">2017-01-05</field>
         <field name="start" type="TimeField">18:00:00</field>
+        <field name="valid_until" type="DateField">2017-12-31</field>
         <field name="stop" type="TimeField">19:00:00</field>
         <field name="repeat" type="IntegerField">3</field>
-        <field name="valid_until" type="DateField">2017-12-31</field>
+    </object>
+    <object model="scheduler.event" pk="3">
+        <field name="title" type="CharField">Hospoda</field>
+        <field name="description" type="TextField"></field>
+        <field name="category" rel="ManyToOneRel" to="scheduler.category">3</field>
+        <field name="valid_from" type="DateField">2017-09-07</field>
+        <field name="start" type="TimeField">19:00:00</field>
+        <field name="valid_until" type="DateField">2017-09-30</field>
+        <field name="stop" type="TimeField">23:00:00</field>
+        <field name="repeat" type="IntegerField">4</field>
+    </object>
+    <object model="scheduler.event" pk="4">
+        <field name="title" type="CharField">Soustředění</field>
+        <field name="description" type="TextField"></field>
+        <field name="category" rel="ManyToOneRel" to="scheduler.category">2</field>
+        <field name="valid_from" type="DateField">2017-09-16</field>
+        <field name="start" type="TimeField">12:00:00</field>
+        <field name="valid_until" type="DateField">2017-09-23</field>
+        <field name="stop" type="TimeField">12:00:00</field>
+        <field name="repeat" type="IntegerField">1</field>
+    </object>
+    <object model="scheduler.event" pk="5">
+        <field name="title" type="CharField">Prodloužený víkend</field>
+        <field name="description" type="TextField"></field>
+        <field name="category" rel="ManyToOneRel" to="scheduler.category"><None></None></field>
+        <field name="valid_from" type="DateField">2017-08-31</field>
+        <field name="start" type="TimeField">12:00:00</field>
+        <field name="valid_until" type="DateField">2017-09-03</field>
+        <field name="stop" type="TimeField">12:00:00</field>
+        <field name="repeat" type="IntegerField">1</field>
+    </object>
+    <object model="scheduler.event" pk="6">
+        <field name="title" type="CharField">Prodloužený víkend</field>
+        <field name="description" type="TextField"></field>
+        <field name="category" rel="ManyToOneRel" to="scheduler.category"><None></None></field>
+        <field name="valid_from" type="DateField">2017-09-28</field>
+        <field name="start" type="TimeField">12:00:00</field>
+        <field name="valid_until" type="DateField">2017-10-01</field>
+        <field name="stop" type="TimeField">12:00:00</field>
+        <field name="repeat" type="IntegerField">1</field>
+    </object>
+    <object model="scheduler.event" pk="7">
+        <field name="title" type="CharField">Hospoda</field>
+        <field name="description" type="TextField"></field>
+        <field name="category" rel="ManyToOneRel" to="scheduler.category"><None></None></field>
+        <field name="valid_from" type="DateField">2017-09-11</field>
+        <field name="start" type="TimeField">18:00:00</field>
+        <field name="valid_until" type="DateField">2017-09-11</field>
+        <field name="stop" type="TimeField">23:59:59</field>
+        <field name="repeat" type="IntegerField">1</field>
     </object>
     <object model="scheduler.cancelledevent" pk="1">
-        <field name="valid_from" type="DateField">2017-08-07</field>
-        <field name="valid_until" type="DateField">2017-08-13</field>
+        <field name="valid_from" type="DateField">2017-09-04</field>
+        <field name="valid_until" type="DateField">2017-09-10</field>
         <field name="description" type="TextField">Dovolená</field>
-        <field name="events" rel="ManyToManyRel" to="scheduler.event"><object pk="1"></object><object pk="2"></object></field>
+        <field name="events" rel="ManyToManyRel" to="scheduler.event"><object pk="1"></object><object pk="2"></object><object pk="4"></object><object pk="5"></object><object pk="6"></object></field>
     </object>
 </django-objects>
